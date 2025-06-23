@@ -7,12 +7,12 @@ function App() {
   const [count, setCount] = useState(0);
   //el estadso tiene 3partes
   const [variable, setVariable] = useState("valor Inicial");
-  const [personaje, setPersonaje] = useState[""];
+  const [personajes, setPersonajes] = useState([]);
 
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => setPersonajes(result.results));
   }, []);
 
   return (
